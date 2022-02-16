@@ -1,11 +1,9 @@
 
-var cols = 16;
-var rows = 16;
 const main = document.querySelector("#main");
 const newGrid = document.querySelector("#newGrid");
 
 
-function addGrid(){
+function addGrid(rows, cols){
     for(let i = 0; i < rows; i++){
         let row = document.createElement("div");
         row.className = "row";
@@ -19,5 +17,26 @@ function addGrid(){
     }
 }
 
+function HoverChange() {
+    this.style.backgroundColor = "red";
+    return false;
+}
+
+function ResetGrid() {
+    console.log("button pressed");
+
+    while(main.firstChild){
+        main.removeChild(main.firstChild);
+    }
+
+    addGrid(50, 50);
+
+    document.querySelectorAll('.box').forEach(box => {
+        box.addEventListener('mouseover', HoverChange);});
+}
+
 addGrid();
+
+
+newGrid.addEventListener('click', ResetGrid);
 //newGrid.addEventListener('click', () => addGrid());

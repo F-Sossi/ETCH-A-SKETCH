@@ -1,7 +1,12 @@
+
+
 #main {
     background-color: lightblue;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
 }
 
 .row {
@@ -9,11 +14,14 @@
 }
 
 .box {
+    height: 5px;
+    width: 5px;
+    background-color: white;
+}
+.activated {
     height: 50px;
     width: 50px;
-    border: 5px;
-    border-color: black;
-    background-color: white;
-    display: flex;
+    outline-style: dashed;
+    background-color: red;
     gap: 8px;
 }
