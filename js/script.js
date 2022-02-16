@@ -17,7 +17,8 @@ function addGrid(rows, cols){
     }
 }
 
-function HoverChange() {
+function HoverChange(e) {
+    // if(e.type === 'mouseover' && 'mousedown') return;
     this.style.backgroundColor = "red";
     return false;
 }
@@ -36,7 +37,9 @@ function ResetGrid() {
     addGrid(side, side);
 
     document.querySelectorAll('.box').forEach(box => {
-        box.addEventListener('mouseover', HoverChange);});
+        box.addEventListener('mouseover', HoverChange);
+        // box.addEventListener('mousedown', HoverChange);
+    });
 }
 
 addGrid();
