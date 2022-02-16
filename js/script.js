@@ -29,7 +29,11 @@ function ResetGrid() {
         main.removeChild(main.firstChild);
     }
 
-    addGrid(50, 50);
+    let side = prompt("Enter the size grid you want to draw")
+
+    if(side > 150){side = 150;}
+
+    addGrid(side, side);
 
     document.querySelectorAll('.box').forEach(box => {
         box.addEventListener('mouseover', HoverChange);});
